@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+langchain_cohere
+crewai
+
+crewai_tools
+ 
