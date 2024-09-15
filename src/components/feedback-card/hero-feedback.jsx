@@ -31,7 +31,7 @@ function HeroSection() {
                     Discover a world of endless oppurtunities in Tech World
                 </p>
                 <a
-                    href="#"
+                    href="feedback-form"
                     className="inline-block py-3 px-6 bg-white text-black font-semibold rounded-lg shadow-lg hover:bg-gray-100 transition"
                 >
                     Get Started
