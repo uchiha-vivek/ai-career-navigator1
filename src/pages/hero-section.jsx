@@ -5,7 +5,7 @@ const HeroSection = () => {
       <>
         {/* Hero Section */}
         <div
-          className="hero-section w-full h-screen bg-gray-100 flex items-center justify-center"
+          className="hero-section w-full h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-red-900 flex items-center justify-center"
           aria-label="Career navigator hero section"
         >
           <div className="hero-content flex flex-col items-center text-center px-4">
@@ -21,11 +21,9 @@ const HeroSection = () => {
   
             {/* Buttons */}
             <div className="flex space-x-4">
-              <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
-                Learn More
-              </button>
-              <Link to='interview'>
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+               
+              <Link to='feedback'>
+              <button className="bg-black hover: bg-gradient-to-br border-black from-blue-900 via-purple-900 to-red-900 text-white font-bold py-2 px-4 rounded">
                 Get Started
               </button>
               </Link>

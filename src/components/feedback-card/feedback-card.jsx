@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 const FramerMotionCard = () => {
   return (
     <section className="grid place-content-center px-4 py-4 md:px-8 md:py-8">
-      
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">Features</h2>
-      
       <div className="flex flex-col lg:flex-row lg:space-x-4 space-y-4 lg:space-y-0 items-center justify-center">
         <Card />
         <Card1 />
@@ -29,14 +27,14 @@ const Card = () => {
         duration: 0.5,
         ease: "backInOut",
       }}
-      className="p-8 relative h-96 w-full max-w-xs shrink-0 overflow-hidden rounded-xl text-black flex flex-col justify-between border border-gray-300"
+      className="p-8 relative h-96 w-full max-w-xs shrink-0 overflow-hidden rounded-xl text-white flex flex-col justify-between border border-gray-300"
       style={{
-        backgroundImage: 'url("")', 
+        background: 'linear-gradient(135deg, #1e3a8a, #7f1d1d, #d97706)', // Dark gradient background
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
-      <div className="relative z-10 text-black space-y-4 text-black/60 p-4 rounded">
+      <div className="relative z-10 text-white space-y-4 text-black/60 p-4 rounded">
         <motion.span
           initial={{ scale: 1 }}
           variants={{
@@ -50,12 +48,12 @@ const Card = () => {
           }}
           className="block my-2 origin-top-left font-mono text-4xl font-black"
         >
-          AI Interview Prep
+          Feedback Form
         </motion.span>
       </div>
       <Link
-        to='/feedback'
-        className="z-20 rounded border-2 bg-white/10 py-2 text-red-500 hover:bg-white/20 transition text-center"
+        to='/feedback-form'
+        className="z-20 rounded border-2 bg-white/10 py-2 text-black hover:bg-white/20 transition text-center"
       >
         Explore!
       </Link>
@@ -76,14 +74,14 @@ const Card1 = () => {
         duration: 0.5,
         ease: "backInOut",
       }}
-      className="p-8 relative h-96 w-full max-w-xs shrink-0 overflow-hidden rounded-xl text-black flex flex-col justify-between border border-gray-300"
+      className="p-8 relative h-96 w-full max-w-xs shrink-0 overflow-hidden rounded-xl text-white flex flex-col justify-between border border-gray-300"
       style={{
-        backgroundImage: 'url("/path/to/your/image2.jpg")', // Set your background image path
+        background: 'linear-gradient(135deg, #1e3a8a, #7f1d1d, #d97706)', // Dark gradient background
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
-      <div className="relative z-10 text-black space-y-4 text-black/60 p-4 rounded">
+      <div className="relative z-10 text-white space-y-4 text-black/60 p-4 rounded">
         <motion.span
           initial={{ scale: 1 }}
           variants={{
@@ -97,12 +95,13 @@ const Card1 = () => {
           }}
           className="block my-2 origin-top-left font-mono text-4xl font-black"
         >
-          AI Generated Practise
+          
+          Generate Question
         </motion.span>
       </div>
       <Link
-        to='/'
-        className="z-20 rounded border-2 bg-white/10 py-2 text-red-500 hover:bg-white/20 transition text-center"
+        to='/generate-question'
+        className="z-20 rounded border-2 bg-white/10 py-2 text-black hover:bg-white/20 transition text-center"
       >
         Try It Out
       </Link>
@@ -123,14 +122,14 @@ const Card2 = () => {
         duration: 0.5,
         ease: "backInOut",
       }}
-      className="p-8 relative h-96 w-full max-w-xs shrink-0 overflow-hidden rounded-xl text-black flex flex-col justify-between border border-gray-300"
+      className="p-8 relative h-96 w-full max-w-xs shrink-0 overflow-hidden rounded-xl text-white flex flex-col justify-between border border-gray-300"
       style={{
-        backgroundImage: 'url("")', 
+        background: 'linear-gradient(135deg, #1e3a8a, #7f1d1d, #d97706)', // Dark gradient background
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
-      <div className="relative z-10 text-black space-y-4 text-black/60 p-4 rounded">
+      <div className="relative z-10 text-white space-y-4 text-black/60 p-4 rounded">
         <motion.span
           initial={{ scale: 1 }}
           variants={{
@@ -144,12 +143,12 @@ const Card2 = () => {
           }}
           className="block my-2 origin-top-left font-mono text-4xl font-black"
         >
-          Linkedin AI Optimising
+          Technical Problem
         </motion.span>
       </div>
       <Link
-        to='/'
-        className="z-20 rounded border-2 bg-white/10 py-2 text-red-500 hover:bg-white/20 transition text-center"
+        to='/technical'
+        className="z-20 rounded border-2 bg-white/10 py-2 text-black hover:bg-white/20 transition text-center"
       >
         Try It Out
       </Link>
