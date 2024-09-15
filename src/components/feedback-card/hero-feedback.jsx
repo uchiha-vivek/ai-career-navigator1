@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 function HeroSection() {
     return (
@@ -30,12 +31,12 @@ function HeroSection() {
                 <p className="text-lg md:text-2xl mb-8">
                     Discover a world of endless oppurtunities in Tech World
                 </p>
-                <a
-                    href="feedback-form"
+                <Link
+                    to="/feedback-form"
                     className="inline-block py-3 px-6 bg-white text-black font-semibold rounded-lg shadow-lg hover:bg-gray-100 transition"
                 >
                     Get Started
-                </a>
+                </Link>
             </div>
         </div>
     );
