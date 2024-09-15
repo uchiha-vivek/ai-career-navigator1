@@ -1,9 +1,8 @@
 import Footer from "../components/footer";
 import Navbar from "../components/interview-navbar";
 import InfoCard from "../components/interview/product-card";
- 
-import Subscribe from "../components/Interview/subscription";
-import WishList from "../components/interview/wishlist";
+import Subscribe from "../components/interview/subscription";
+ import WishList from "../components/interview/wishlist";
 
 
 function InterviewPreparation() {
