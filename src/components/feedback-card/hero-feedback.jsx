@@ -25,10 +25,10 @@ function HeroSection() {
             {/* Content */}
             <div className="relative text-center text-white z-10 px-4 md:px-8">
                 <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                    Welcome to Our Vibrant World
+                    Welcome to Career Navigator
                 </h1>
                 <p className="text-lg md:text-2xl mb-8">
-                    Discover a world of endless possibilities and explore what we have to offer.
+                    Discover a world of endless oppurtunities in Tech World
                 </p>
                 <a
                     href="#"

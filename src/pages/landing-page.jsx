@@ -1,5 +1,7 @@
 import FramerMotionCard from "../components/card-component"
 import Footer from "../components/footer"
+import InterviewAssistantComponent from "../components/InterviewAssistantComponent"
+import InterviewComponent from "../components/InterviewComponent"
 import Navbar from "../components/navbar"
 import HeroSection from "./hero-section"
 
@@ -15,6 +17,7 @@ const LandingPage = () => {
             <HeroSection/>
             <main className="flex-grow mt-20 " >
                  <FramerMotionCard/>
+                
             </main>
             <Footer/>
         </div>

@@ -50,9 +50,9 @@ const FeedbackForm = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-gradient-to-br from-blue-900 via-purple-900 to-red-900 rounded-lg shadow-lg">
+    <div className="max-w-3xl mx-auto p-6 bg-gradient-to-r from-purple-500 to-purple-700 rounded-lg shadow-md">
       <h1 className="text-3xl font-bold text-white mb-6 text-center">Feedback Form</h1>
-      <form onSubmit={handleSubmit} className="space-y-6 p-6 rounded-lg shadow-lg bg-transparent">
+      <form onSubmit={handleSubmit} className="space-y-6 p-6 bg-transparent rounded-lg shadow-lg">
         <div>
           <label className="block text-sm font-medium text-white">
             Job Role:
@@ -61,7 +61,7 @@ const FeedbackForm = () => {
               name="job_role"
               value={formData.job_role}
               onChange={handleChange}
-              className="mt-1 block w-full p-3 border border-gray-300 rounded-md bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-1 block w-full p-3 border border-gray-300 rounded-md bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400"
               placeholder="Enter job role"
             />
           </label>
@@ -74,7 +74,7 @@ const FeedbackForm = () => {
               value={formData.job_description}
               onChange={handleChange}
               rows="4"
-              className="mt-1 block w-full p-3 border border-gray-300 rounded-md bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-1 block w-full p-3 border border-gray-300 rounded-md bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400"
               placeholder="Enter job description"
             />
           </label>
@@ -87,7 +87,7 @@ const FeedbackForm = () => {
               name="interview_question"
               value={formData.interview_question}
               onChange={handleChange}
-              className="mt-1 block w-full p-3 border border-gray-300 rounded-md bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-1 block w-full p-3 border border-gray-300 rounded-md bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400"
               placeholder="Enter interview question"
             />
           </label>
@@ -100,7 +100,7 @@ const FeedbackForm = () => {
               value={formData.candidate_answer}
               onChange={handleChange}
               rows="4"
-              className="mt-1 block w-full p-3 border border-gray-300 rounded-md bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-1 block w-full p-3 border border-gray-300 rounded-md bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400"
               placeholder="Enter candidate answer"
             />
           </label>
@@ -128,7 +128,7 @@ const FeedbackForm = () => {
       )}
 
       {responseData && !error && (
-        <div className="mt-8 p-6 bg-gradient-to-br from-blue-800 via-purple-800 to-red-800 rounded-lg shadow-lg">
+        <div className="mt-8 p-6 bg-gradient-to-r from-purple-800 to-purple-600 rounded-lg shadow-lg">
           <h2 className="text-2xl font-semibold text-white mb-4">Response Data</h2>
           <div>
             <h3 className="text-lg font-semibold text-white">Candidate's Answer:</h3>
