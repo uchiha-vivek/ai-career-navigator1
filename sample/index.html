@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview Assistant with Upstage AI</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .form-container {
+      margin-bottom: 40px;
+    }
+    .form-container input, .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .output {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Interview Assistant with Upstage AI</h1>
+
+  <!-- Generate Interview Questions Form -->
+  <div class="form-container">
+    <h2>Generate Interview Questions</h2>
+    <form id="generateInterviewQuestionsForm">
+      <input type="text" id="jobRole" placeholder="Job Role" required />
+      <textarea id="jobDescription" placeholder="Job Description" required></textarea>
+      <button type="submit">Generate Questions</button>
+    </form>
+    <div id="interviewQuestionsOutput" class="output"></div>
+  </div>
+
+  <!-- Analyze Resume Form -->
+  <div class="form-container">
+    <h2>Analyze Resume</h2>
+    <form id="analyzeResumeForm">
+      <textarea id="resumeData" placeholder="Paste Resume Data" required></textarea>
+      <textarea id="resumeJobDescription" placeholder="Job Description" required></textarea>
+      <button type="submit">Analyze Resume</button>
+    </form>
+    <div id="resumeFeedbackOutput" class="output"></div>
+  </div>
+
+  <!-- Provide Interview Feedback Form -->
+  <div class="form-container">
+    <h2>Provide Interview Feedback</h2>
+    <form id="provideFeedbackForm">
+      <textarea id="interviewQuestion" placeholder="Interview Question" required></textarea>
+      <textarea id="candidateAnswer" placeholder="Candidate Answer" required></textarea>
+      <button type="submit">Provide Feedback</button>
+    </form>
+    <div id="feedbackOutput" class="output"></div>
+  </div>
+
+  <!-- Optimize LinkedIn Profile Form -->
+  <div class="form-container">
+    <h2>Optimize LinkedIn Profile</h2>
+    <form id="optimizeLinkedInForm">
+      <input type="text" id="linkedInProfileUrl" placeholder="LinkedIn Profile URL" required />
+      <button type="submit">Optimize Profile</button>
+    </form>
+    <div id="linkedInProfileOutput" class="output"></div>
+  </div>
+
+  <!-- Solve Technical Problem Form -->
+  <div class="form-container">
+    <h2>Solve Technical Problem</h2>
+    <form id="solveTechnicalProblemForm">
+      <textarea id="technicalProblemCriteria" placeholder="Technical Problem Criteria" required></textarea>
+      <button type="submit">Solve Problem</button>
+    </form>
+    <div id="technicalProblemOutput" class="output"></div>
+  </div>
+
+  <script>
+    const API_KEY = 'up_883OJjJ3CDTfEgYyZOE9UaOzeWCEd'; // Replace with your Upstage AI API key
+    const BASE_URL = 'https://api.upstage.ai/v1/solar';
+
+    async function callUpstageAI(agentRole, taskDescription, inputData) {
+      try {
+        const response = await axios.post(
+          `${BASE_URL}/chat/completions`,
+          {
+            model: 'solar-pro',
+            messages: [
+              {
+                role: 'system',
+                content: `You are a ${agentRole}.`
+              },
+              {
+                role: 'user',
+                content: taskDescription
+              }
+            ]
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${API_KEY}`,
+              'Content-Type': 'application/json'
+            }
+          }
+        );
+        return response.data.choices[0].message.content;
+      } catch (error) {
+        console.error('Error:', error.response ? error.response.data : error.message);
+        return 'Error occurred while processing the request.';
+      }
+    }
+
+    // Handle Generate Interview Questions
+    document.getElementById('generateInterviewQuestionsForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const jobRole = document.getElementById('jobRole').value;
+      const jobDescription = document.getElementById('jobDescription').value;
+      const result = await callUpstageAI('Interview Question Generator', `Generate interview questions for the job role: ${jobRole}, with the job description: ${jobDescription}.`);
+      document.getElementById('interviewQuestionsOutput').innerText = result;
+    });
+
+    // Handle Analyze Resume
+    document.getElementById('analyzeResumeForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const resumeData = document.getElementById('resumeData').value;
+      const jobDescription = document.getElementById('resumeJobDescription').value;
+      const result = await callUpstageAI('Resume Screener', `Analyze the resume: ${resumeData} for the job: ${jobDescription}.`);
+      document.getElementById('resumeFeedbackOutput').innerText = result;
+    });
+
+    // Handle Provide Interview Feedback
+    document.getElementById('provideFeedbackForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const interviewQuestion = document.getElementById('interviewQuestion').value;
+      const candidateAnswer = document.getElementById('candidateAnswer').value;
+      const result = await callUpstageAI('Interview Feedback Specialist', `Provide feedback for the interview question: ${interviewQuestion}, with the candidate's answer: ${candidateAnswer}.`);
+      document.getElementById('feedbackOutput').innerText = result;
+    });
+
+    // Handle Optimize LinkedIn Profile
+    document.getElementById('optimizeLinkedInForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const linkedInProfileUrl = document.getElementById('linkedInProfileUrl').value;
+      const result = await callUpstageAI('LinkedIn Profile Optimizer', `Optimize the LinkedIn profile: ${linkedInProfileUrl}.`);
+      document.getElementById('linkedInProfileOutput').innerText = result;
+    });
+
+    // Handle Solve Technical Problem
+    document.getElementById('solveTechnicalProblemForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const criteria = document.getElementById('technicalProblemCriteria').value;
+      const result = await callUpstageAI('Technical Problem Solver', `Solve a technical problem based on the following criteria: ${criteria}.`);
+      document.getElementById('technicalProblemOutput').innerText = result;
+    });
+  </script>
+
+</body>
+</html>
