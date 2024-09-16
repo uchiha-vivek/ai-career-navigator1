@@ -1,3 +1,5 @@
+import Login from "../components/authentication/login-form"
+import RegisterPage from "../components/authentication/register-form"
 import FramerMotionCard from "../components/card-component"
 import Footer from "../components/footer"
 import InterviewAssistantComponent from "../components/InterviewAssistantComponent"
@@ -17,6 +19,8 @@ const LandingPage = () => {
             <HeroSection/>
             <main className="flex-grow mt-20 " >
                  <FramerMotionCard/>
+                 {/* <Login/>
+                 <RegisterPage/> */}
                 
             </main>
             <Footer/>
