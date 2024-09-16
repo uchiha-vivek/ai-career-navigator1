@@ -1,7 +1,7 @@
 // services/interviewAssistantService.js
 import axios from 'axios';
 
-const API_KEY = "up_883OJjJ3CDTfEgYyZOE9UaOzeWCEd" ;
+const API_KEY = "up_4cNh3N2oiXa2H7oFbk1ivxbwVClsI" ;
 const BASE_URL = 'https://api.upstage.ai/v1/solar';
 
 const callUpstageAI = async (agentRole, taskDescription, inputData) => {
