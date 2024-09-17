@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 // Initialize Upstage AI API key and base URL
-const API_KEY = 'up_4cNh3N2oiXa2H7oFbk1ivxbwVClsI';
+const API_KEY =  import.meta.env.VITE_COHERE_API ;
 const BASE_URL = 'https://api.upstage.ai/v1/solar';
 
 class InterviewAssistant {
