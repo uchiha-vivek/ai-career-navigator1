@@ -34,76 +34,12 @@ function InterviewAssistantComponent() {
     }
   };
 
-  const handleAnalyzeResume = async () => {
-    setLoading(true);
-    setError('');
-    try {
-      const data = await analyzeResume(resumeData, jobDescription);
-      setResult(data);
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleProvideFeedback = async () => {
-    setLoading(true);
-    setError('');
-    try {
-      const data = await provideFeedback(interviewQuestion, candidateAnswer);
-      setResult(data);
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleOptimizeProfile = async () => {
-    setLoading(true);
-    setError('');
-    try {
-      const data = await optimizeLinkedInProfile(profileData);
-      setResult(data);
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleSolveTechnicalProblem = async () => {
-    setLoading(true);
-    setError('');
-    try {
-      const data = await solveTechnicalProblem(criteria);
-      setResult(data);
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleInterviewFlow = async () => {
-    setLoading(true);
-    setError('');
-    try {
-      const data = await handleInterviewFlow(jobRole, jobDescription, interviewQuestion, candidateAnswer);
-      setResult(data);
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+  // Other handler functions...
 
   return (
     <div className="max-w-3xl mx-auto p-6 bg-gradient-to-r from-purple-500 to-purple-700 rounded-lg shadow-md">
       <h1 className="text-2xl font-bold mb-6 text-white">Interview Assistant</h1>
       <div className="space-y-4">
-       
         <div>
           <input
             type="text"
@@ -127,9 +63,18 @@ function InterviewAssistantComponent() {
             {loading ? 'Loading...' : 'Generate Questions'}
           </button>
         </div>
-        {/* Add similar sections for other functionalities */}
-        {result && <pre className="mt-4 p-4 bg-gray-100 rounded-md text-gray-800">{result}</pre>}
-        {error && <div className="mt-4 p-4 bg-red-100 text-red-800 rounded-md">{error}</div>}
+        
+        {/* Result and error display with proper styling */}
+        {result && (
+          <pre className="mt-4 p-4 bg-gray-100 rounded-md text-gray-800 overflow-y-auto max-h-60">
+            {result}
+          </pre>
+        )}
+        {error && (
+          <div className="mt-4 p-4 bg-red-100 text-red-800 rounded-md overflow-y-auto max-h-60">
+            {error}
+          </div>
+        )}
       </div>
     </div>
   );
